@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
     private float moveInput;
     private bool facingRight = true;
+    private bool isDefeated = false;
 
     private void Awake()
     {
@@ -27,6 +28,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (isDefeated) return;
         var kb = Keyboard.current;
         if (kb == null) return;
 
@@ -50,7 +52,15 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (isDefeated) return;
         rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
+    }
+
+    public void Defeat()
+    {
+        isDefeated = true;
+        rb.linearVelocity = Vector2.zero;
+        rb.bodyType = RigidbodyType2D.Kinematic;
     }
 
     private void HandleFlip()
