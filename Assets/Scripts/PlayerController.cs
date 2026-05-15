@@ -63,6 +63,13 @@ public class PlayerController : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Kinematic;
     }
 
+    public void Win()
+    {
+        isDefeated = true; // reutiliza el flag para bloquear input
+        rb.linearVelocity = Vector2.zero;
+        rb.bodyType = RigidbodyType2D.Kinematic;
+    }
+
     private void HandleFlip()
     {
         if (moveInput > 0 && !facingRight) Flip();
