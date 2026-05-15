@@ -61,13 +61,15 @@ public class PlayerController : MonoBehaviour
         isDefeated = true;
         rb.linearVelocity = Vector2.zero;
         rb.bodyType = RigidbodyType2D.Kinematic;
+        UIManager.instance?.ShowDerrota();
     }
 
     public void Win()
     {
-        isDefeated = true; // reutiliza el flag para bloquear input
+        isDefeated = true;
         rb.linearVelocity = Vector2.zero;
         rb.bodyType = RigidbodyType2D.Kinematic;
+        UIManager.instance?.ShowVictoria();
     }
 
     private void HandleFlip()
