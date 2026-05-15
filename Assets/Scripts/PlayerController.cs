@@ -9,8 +9,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpForce = 12f;
 
     [Header("Ground Check")]
-    [SerializeField] private Transform groundCheck;
-    [SerializeField] private float groundCheckRadius = 0.15f;
     [SerializeField] private LayerMask groundLayer;
 
     private Rigidbody2D rb;
@@ -35,9 +33,6 @@ public class PlayerController : MonoBehaviour
         moveInput = 0f;
         if (kb.aKey.isPressed || kb.leftArrowKey.isPressed)  moveInput = -1f;
         if (kb.dKey.isPressed || kb.rightArrowKey.isPressed) moveInput =  1f;
-
-        if (groundCheck != null)
-            isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
         bool jumpPressed = kb.spaceKey.wasPressedThisFrame
                         || kb.wKey.wasPressedThisFrame
@@ -93,10 +88,11 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("IsGrounded", isGrounded);
     }
 
-    private void OnDrawGizmosSelected()
+    private void OnCollisionStay2D(Collision2D col)
     {
-        if (groundCheck == null) return;
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
+        foreach (var contact in col.contacts)
+            if (contact.normal.y > 0.5f) { isGrounded = true; return; }
     }
+
+    private void OnCollisionExit2D(Collision2D col) => isGrounded = false;
 }
