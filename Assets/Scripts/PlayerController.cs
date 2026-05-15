@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
@@ -26,11 +27,21 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        moveInput = Input.GetAxisRaw("Horizontal");
+        var kb = Keyboard.current;
+        if (kb == null) return;
 
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        moveInput = 0f;
+        if (kb.aKey.isPressed || kb.leftArrowKey.isPressed)  moveInput = -1f;
+        if (kb.dKey.isPressed || kb.rightArrowKey.isPressed) moveInput =  1f;
 
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (groundCheck != null)
+            isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+
+        bool jumpPressed = kb.spaceKey.wasPressedThisFrame
+                        || kb.wKey.wasPressedThisFrame
+                        || kb.upArrowKey.wasPressedThisFrame;
+
+        if (jumpPressed && isGrounded)
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
 
         HandleFlip();
@@ -44,18 +55,16 @@ public class PlayerController : MonoBehaviour
 
     private void HandleFlip()
     {
-        if (moveInput > 0 && !facingRight)
-            Flip();
-        else if (moveInput < 0 && facingRight)
-            Flip();
+        if (moveInput > 0 && !facingRight) Flip();
+        else if (moveInput < 0 && facingRight) Flip();
     }
 
     private void Flip()
     {
         facingRight = !facingRight;
-        Vector3 scale = transform.localScale;
-        scale.x *= -1;
-        transform.localScale = scale;
+        Vector3 s = transform.localScale;
+        s.x *= -1;
+        transform.localScale = s;
     }
 
     private void UpdateAnimations()
@@ -65,7 +74,6 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("IsGrounded", isGrounded);
     }
 
-    // Para visualizar el ground check en el editor
     private void OnDrawGizmosSelected()
     {
         if (groundCheck == null) return;
