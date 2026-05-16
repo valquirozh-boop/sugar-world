@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 44045e2e94fe001489ee5cd5ab4a9160
+guid: e024c02f50a373e419f6711c4cf9c46c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3960201912525743767
-    second: Boton Confuguracion - copia_0
+      213: -6369458792740948514
+    second: Boton Creditos (3)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,12 +100,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Boton Confuguracion - copia_0
+      name: Boton Creditos (3)_0
       rect:
         serializedVersion: 2
         x: 11
         y: 0
-        width: 1494
+        width: 1515
         height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7966bea48a675f630800000000000000
-      internalID: 3960201912525743767
+      spriteID: ed5ff2f89f22b97a0800000000000000
+      internalID: -6369458792740948514
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Boton Confuguracion - copia_0: 3960201912525743767
+      Boton Creditos (3)_0: -6369458792740948514
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
