@@ -1,52 +1,62 @@
 using System.Collections;
 using UnityEngine;
 
-public class ObstaculoDesaparece : MonoBehaviour
+public class AlgodonEsfumable : MonoBehaviour
 {
     [Header("Configuración")]
-    [Tooltip("Tiempo en segundos antes de desaparecer")]
-    [SerializeField] private float tiempoEspera = 5f; // Cambiado a 5 segundos
+    [Tooltip("Tiempo que el jugador puede estar encima antes de empezar a esfumarse")]
+    [SerializeField] private float tiempoEspera = 5f;
 
-    [SerializeField] private string tagJugador = "Player";
+    [Tooltip("Qué tan rápido se desvanece (valores más altos lo hacen más rápido)")]
+    [SerializeField] private float velocidadDesvanecer = 1.5f;
 
     private SpriteRenderer spriteRenderer;
+    private Collider2D colisionador;
     private bool yaSeActivo = false;
 
     private void Start()
     {
-        // Obtenemos el componente visual para poder hacerlo parpadear
+        // Obtenemos los componentes del algodón automáticamente
         spriteRenderer = GetComponent<SpriteRenderer>();
+        colisionador = GetComponent<Collider2D>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // Verifica si es el jugador y si aún no se ha activado
-        if (collision.gameObject.CompareTag(tagJugador) && !yaSeActivo)
+        // Si lo que toca el algodón tiene el Tag "Player" y no se ha activado antes
+        if (collision.gameObject.CompareTag("Player") && !yaSeActivo)
         {
-            StartCoroutine(FaseDesaparecer());
+            StartCoroutine(EfectoEsfumarse());
         }
     }
 
-    private IEnumerator FaseDesaparecer()
+    private IEnumerator EfectoEsfumarse()
     {
         yaSeActivo = true;
 
-        // Espera 3 segundos normales
-        yield return new WaitForSeconds(tiempoEspera - 2f);
+        // 1. Espera los 5 segundos en los que el jugador está encima
+        yield return new WaitForSeconds(tiempoEspera);
 
-        // Los últimos 2 segundos parpadea para avisar al jugador
-        float tiempoParpadeo = 0f;
-        while (tiempoParpadeo < 2f)
+        // 2. Quitamos la colisión para que el jugador empiece a caer a través de él
+        if (colisionador != null)
         {
-            // Invierte la visibilidad del sprite
-            spriteRenderer.enabled = !spriteRenderer.enabled;
-            
-            // Espera un instante antes de volver a cambiar (parpadeo rápido)
-            yield return new WaitForSeconds(0.15f);
-            tiempoParpadeo += 0.15f;
+            colisionador.enabled = false;
         }
 
-        // Finalmente, desaparece por completo
+        // 3. Efecto visual: Reducir la opacidad (Alpha) poco a poco hasta que sea 0
+        Color colorActual = spriteRenderer.color;
+
+        while (colorActual.a > 0f)
+        {
+            // Restamos transparencia con el paso del tiempo
+            colorActual.a -= velocidadDesvanecer * Time.deltaTime;
+            spriteRenderer.color = colorActual;
+            
+            // Espera al siguiente frame antes de continuar el bucle
+            yield return null; 
+        }
+
+        // 4. Cuando ya es totalmente invisible, desactivamos el objeto por completo
         gameObject.SetActive(false);
     }
 }
