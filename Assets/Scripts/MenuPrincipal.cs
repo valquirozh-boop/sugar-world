@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuPrincipal : MonoBehaviour
 {
-    // Aquí conectaremos tus paneles de galleta más tarde en el Inspector
+    // Aquí conectaremos tus paneles de galleta en el Inspector
     public GameObject panelCreditos;
     public GameObject panelConfig;
 
@@ -16,18 +16,17 @@ public class MenuPrincipal : MonoBehaviour
 
     public void BotonJugar()
     {
-        // IMPORTANTE: Cambia "Nivel1" por el nombre de la escena de tu compañera
-        SceneManager.LoadScene("Nivel1"); 
+        SceneManager.LoadScene("Nivel1");
     }
 
     public void AbrirCreditos()
     {
-        panelCreditos.SetActive(true); // Prende el panel
+        panelCreditos.SetActive(true);
     }
 
     public void CerrarCreditos()
     {
-        panelCreditos.SetActive(false); // Apaga el panel
+        panelCreditos.SetActive(false);
     }
 
     public void AbrirConfig()
@@ -42,7 +41,7 @@ public class MenuPrincipal : MonoBehaviour
 
     public void BotonSalir()
     {
-        Debug.Log("Saliendo del juego..."); // Esto sale en la consola de Unity
+        Debug.Log("El jugador ha salido");
         Application.Quit();
     }
 }
