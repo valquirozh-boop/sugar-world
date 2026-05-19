@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 479f505089036b3448f914c716a4dc43
+guid: b38a0262007f57c419abf40845f22894
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -408327487947842520
-    second: fondo_0
+      213: 4808379504478361194
+    second: nevera _0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fondo_0
+      name: nevera _0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1923
-        height: 817
+        x: 21
+        y: 4
+        width: 344
+        height: 620
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 82c57d82054555af0800000000000000
-      internalID: -408327487947842520
+      spriteID: a6693b5feabcab240800000000000000
+      internalID: 4808379504478361194
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      fondo_0: -408327487947842520
+      nevera _0: 4808379504478361194
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
