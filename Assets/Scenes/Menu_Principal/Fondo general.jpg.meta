@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1a34afd38dc18fc46a5c7fd4b08c0045
+guid: db952c06f37bb29438ac4d3b3f8679f4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1913405331877321485
-    second: 08b31ee1-611d-4b14-8720-1668aacdafc1_0
+      213: 9139330975122868335
+    second: descarga_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 08b31ee1-611d-4b14-8720-1668aacdafc1_0
+      name: descarga_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 1
-        width: 1505
-        height: 1023
+        x: 0
+        y: 0
+        width: 275
+        height: 184
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3f42d120df73275e0800000000000000
-      internalID: -1913405331877321485
+      spriteID: f684ce0891d65de70800000000000000
+      internalID: 9139330975122868335
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      08b31ee1-611d-4b14-8720-1668aacdafc1_0: -1913405331877321485
+      descarga_0: 9139330975122868335
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
