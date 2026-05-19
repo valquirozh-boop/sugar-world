@@ -2,20 +2,29 @@ using UnityEngine;
 
 public class PanelInstrucciones : MonoBehaviour
 {
-    // Esta es la variable que verás en el Inspector para arrastrar el panel
-    public GameObject panelInstrucciones; 
+    // Buscamos el panel automáticamente al arrancar
+    private GameObject panelInstrucciones; 
 
     void Start()
     {
-        // Al iniciar el juego, forzamos la pausa y mostramos el panel
+        // 1. Busca el panel por nombre (debe llamarse "PanelInstrucciones" en la jerarquía)
+        panelInstrucciones = GameObject.Find("PanelInstrucciones");
+        
+        // 2. Pausa el juego
         Time.timeScale = 0f;
-        panelInstrucciones.SetActive(true);
     }
 
     public void CerrarInstrucciones()
     {
-        // Al pulsar el botón, ocultamos el panel y reanudamos el tiempo
-        panelInstrucciones.SetActive(false);
+        // 3. Desactiva el panel
+        if (panelInstrucciones != null)
+        {
+            panelInstrucciones.SetActive(false);
+        }
+        
+        // 4. Reanuda el juego
         Time.timeScale = 1f;
+        
+        Debug.Log("Juego iniciado");
     }
 }
