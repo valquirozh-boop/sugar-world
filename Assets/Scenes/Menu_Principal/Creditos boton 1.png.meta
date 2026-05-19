@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 4b138033d60f6674e853e5145defeee9
+guid: 707ea44a8f28cb84087dea5a4265cd46
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1317561178125507817
-    second: Boton Salir_0
+      213: 6480005349497569034
+    second: Creditos boton 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,12 +100,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Boton Salir_0
+      name: Creditos boton 1_0
       rect:
         serializedVersion: 2
         x: 11
         y: 0
-        width: 1516
+        width: 1502
         height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 713ebf7d61517bde0800000000000000
-      internalID: -1317561178125507817
+      spriteID: a0ffe67688a9de950800000000000000
+      internalID: 6480005349497569034
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Boton Salir_0: -1317561178125507817
+      Creditos boton 1_0: 6480005349497569034
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

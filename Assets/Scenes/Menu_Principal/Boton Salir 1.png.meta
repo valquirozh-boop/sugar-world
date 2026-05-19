@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: e024c02f50a373e419f6711c4cf9c46c
+guid: da9f12aae2ef5fe43ab6ac602165940f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6369458792740948514
-    second: Boton Creditos (3)_0
+      213: -1765995760324487930
+    second: Boton Salir 1_0
+  - first:
+      213: -9203767462187022670
+    second: Boton Salir 1_1
+  - first:
+      213: 774975722515254224
+    second: Boton Salir 1_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +106,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Boton Creditos (3)_0
+      name: Boton Salir 1_0
       rect:
         serializedVersion: 2
         x: 11
@@ -115,8 +121,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ed5ff2f89f22b97a0800000000000000
-      internalID: -6369458792740948514
+      spriteID: 605530f663ced77e0800000000000000
+      internalID: -1765995760324487930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boton Salir 1_1
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 643
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b64b0db146a54080800000000000000
+      internalID: -9203767462187022670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boton Salir 1_2
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 622
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0dbc21a405441ca00800000000000000
+      internalID: 774975722515254224
       vertices: []
       indices: 
       edges: []
@@ -135,7 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Boton Creditos (3)_0: -6369458792740948514
+      Boton Salir 1_0: -1765995760324487930
+      Boton Salir 1_1: -9203767462187022670
+      Boton Salir 1_2: 774975722515254224
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
