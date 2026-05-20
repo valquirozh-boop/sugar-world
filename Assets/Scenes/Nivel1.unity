@@ -5376,8 +5376,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 865.6212, y: 541.6294}
-  m_SizeDelta: {x: 210.393, y: 151.022}
+  m_AnchoredPosition: {x: 897.13, y: 497.25}
+  m_SizeDelta: {x: 125.746, y: 120.242}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &605643897
 MonoBehaviour:
@@ -5455,7 +5455,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5696980964632171802, guid: 521bf9c890107f7418c14891e7453b44, type: 3}
+  m_Sprite: {fileID: 9139330975122868335, guid: 730b354f39bfe304880286c3a3e424a2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8729,7 +8729,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1312448905}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 929974567}
+        m_TargetAssemblyTypeName: MenuPausa, Assembly-CSharp
+        m_MethodName: VolverAlMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1312448905
 MonoBehaviour:
   m_ObjectHideFlags: 0
