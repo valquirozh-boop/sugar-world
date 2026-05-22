@@ -4,10 +4,12 @@ using UnityEngine.SceneManagement;
 public class MenuPausa : MonoBehaviour
 {
     public GameObject panelPausa;
+    public GameObject panelConfigPausa;
 
     void Start()
     {
         panelPausa.SetActive(false);
+        panelConfigPausa.SetActive(false);
     }
 
     public void AbrirPausa()
@@ -26,5 +28,15 @@ public class MenuPausa : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
+    }
+
+    public void AbrirConfigPausa()
+    {
+        panelConfigPausa.SetActive(true);
+    }
+
+    public void CerrarConfigPausa()
+    {
+        panelConfigPausa.SetActive(false);
     }
 }
