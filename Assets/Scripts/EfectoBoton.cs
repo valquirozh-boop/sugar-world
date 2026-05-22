@@ -3,9 +3,9 @@ using UnityEngine.EventSystems;
 
 public class EfectoBoton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler
 {
-    public float escalaHover = 1.15f;
-    public float escalaPressed = 0.92f;
-    public float velocidad = 15f;
+    public float escalaHover = 1.2f;
+    public float escalaPressed = 0.95f;
+    public float velocidad = 20f;
 
     private Vector3 escalaOriginal;
     private Vector3 escalaObjetivo;
