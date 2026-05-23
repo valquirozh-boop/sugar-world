@@ -1,42 +1,17 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class MenuPausa : MonoBehaviour
 {
-    public GameObject panelPausa;
-    public GameObject panelConfigPausa;
-
-    void Start()
-    {
-        panelPausa.SetActive(false);
-        panelConfigPausa.SetActive(false);
-    }
+    public GameObject panelPausa; 
 
     public void AbrirPausa()
     {
-        panelPausa.SetActive(true);
-        Time.timeScale = 0f;
-    }
-
-    public void Continuar()
-    {
-        panelPausa.SetActive(false);
-        Time.timeScale = 1f;
-    }
-
-    public void VolverAlMenu()
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("Menu");
-    }
-
-    public void AbrirConfigPausa()
-    {
-        panelConfigPausa.SetActive(true);
-    }
-
-    public void CerrarConfigPausa()
-    {
-        panelConfigPausa.SetActive(false);
+        Debug.Log("Intentando pausar..."); 
+        
+        if (panelPausa != null)
+        {
+            panelPausa.SetActive(true);
+            Time.timeScale = 0f; 
+        }
     }
 }
