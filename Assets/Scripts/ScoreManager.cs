@@ -12,10 +12,10 @@ public class ScoreManager : MonoBehaviour
     public TextMeshProUGUI textPasteles;
 
     private int score;
-    private int donasRecogidas = 0;
-    private int pastelRecogidos = 0;
-    private int totalDonas = 10;
-    private int totalPasteles = 20;
+    public int donasRecogidas = 0;
+    public int pastelRecogidos = 0;
+    private int totalDonas = 30;
+    private int totalPasteles = 30;
 
     private void Awake()
     {
@@ -26,9 +26,9 @@ public class ScoreManager : MonoBehaviour
     void Start()
     {
         if (textDonas != null)
-            textDonas.text = "Donas: 0/10";
+            textDonas.text = "Donas: 0/30";
         if (textPasteles != null)
-            textPasteles.text = "Pasteles: 0/20";
+            textPasteles.text = "Pasteles: 0/30";
         if (scoreText != null)
             scoreText.text = "Puntos: 0";
     }
@@ -44,14 +44,14 @@ public class ScoreManager : MonoBehaviour
     {
         donasRecogidas++;
         if (textDonas != null)
-            textDonas.text = "Donas: " + donasRecogidas + "/10";
+            textDonas.text = "Donas: " + donasRecogidas + "/30";
     }
 
     public void RecogerPastel()
     {
         pastelRecogidos++;
         if (textPasteles != null)
-            textPasteles.text = "Pasteles: " + pastelRecogidos + "/20";
+            textPasteles.text = "Pasteles: " + pastelRecogidos + "/30";
     }
 
     public int GetScore() => score;
