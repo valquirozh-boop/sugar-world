@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5592d43b809075940bc7d478c5562b22
+guid: 9329df3e36d1925419a098c491407c80
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6631801672639454856
-    second: "Boton Configuraci\xF3n 1_0"
+      213: -9129555840008530555
+    second: f3e47ab7-442f-4fc5-8ec5-0c1e554e4747-removebg-preview_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "Boton Configuraci\xF3n 1_0"
+      name: f3e47ab7-442f-4fc5-8ec5-0c1e554e4747-removebg-preview_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 0
-        width: 1494
-        height: 1024
+        x: 19
+        y: 41
+        width: 728
+        height: 230
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 88e14860c74e80c50800000000000000
-      internalID: 6631801672639454856
+      spriteID: 585d23f755d4d4180800000000000000
+      internalID: -9129555840008530555
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "Boton Configuraci\xF3n 1_0": 6631801672639454856
+      f3e47ab7-442f-4fc5-8ec5-0c1e554e4747-removebg-preview_0: -9129555840008530555
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
