@@ -10,15 +10,9 @@ public class Collectible : MonoBehaviour
         if (!other.CompareTag("Player")) return;
 
         if (tipo == TipoColeccionable.Dona)
-        {
-            ScoreManager.instance?.AddPoints(10);
             ScoreManager.instance?.RecogerDona();
-        }
         else if (tipo == TipoColeccionable.Pastel)
-        {
-            ScoreManager.instance?.AddPoints(20);
             ScoreManager.instance?.RecogerPastel();
-        }
 
         Destroy(gameObject);
     }
