@@ -10,6 +10,7 @@ public class MenuPrincipal : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1f;
         if (panelCreditos != null) panelCreditos.SetActive(false);
         if (panelConfig != null) panelConfig.SetActive(false);
         if (panelInstrucciones != null) panelInstrucciones.SetActive(false);
@@ -23,6 +24,7 @@ public class MenuPrincipal : MonoBehaviour
 
     public void BotonJugar()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("Nivel1");
     }
 
