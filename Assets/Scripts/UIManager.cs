@@ -23,13 +23,40 @@ public class UIManager : MonoBehaviour
     {
         if (instance != null) { Destroy(gameObject); return; }
         instance = this;
+
+        // HUD en vivo
+        if (txtDonasHUD == null)
+            txtDonasHUD = GameObject.Find("ScoreTextDona")?.GetComponent<TextMeshProUGUI>();
+        if (txtPastelHUD == null)
+            txtPastelHUD = GameObject.Find("ScoreTextPastel")?.GetComponent<TextMeshProUGUI>();
+        if (txtTotalHUD == null)
+            txtTotalHUD = GameObject.Find("PuntuacionHUD")?.GetComponent<TextMeshProUGUI>();
+
+        // Panel Victoria — busca dentro del panel aunque esté inactivo
+        if (txtDonas == null)
+            txtDonas = BuscarEnHijos(panelVictoria, "TxtDonas");
+        if (txtPasteles == null)
+            txtPasteles = BuscarEnHijos(panelVictoria, "TxtPasteles");
+        if (txtPuntuacionFinal == null)
+            txtPuntuacionFinal = BuscarEnHijos(panelVictoria, "PuntuaciónTotal");
+    }
+
+    TextMeshProUGUI BuscarEnHijos(GameObject padre, string nombre)
+    {
+        if (padre == null) return null;
+        foreach (Transform hijo in padre.GetComponentsInChildren<Transform>(true))
+        {
+            if (hijo.name == nombre)
+                return hijo.GetComponent<TextMeshProUGUI>();
+        }
+        return null;
     }
 
     public void ActualizarHUD(int donas, int pasteles, int total)
     {
-        if (txtDonasHUD != null)  txtDonasHUD.text  = donas    + "/30";
+        if (txtDonasHUD != null)  txtDonasHUD.text  = donas + "/30";
         if (txtPastelHUD != null) txtPastelHUD.text = pasteles + "/30";
-        if (txtTotalHUD != null)  txtTotalHUD.text  = total.ToString();
+        if (txtTotalHUD != null)  txtTotalHUD.text  = total + "/900";
     }
 
     public void ShowDerrota()
@@ -39,21 +66,40 @@ public class UIManager : MonoBehaviour
 
     public void ShowVictoria()
     {
-        if (panelVictoria != null)
+        if (panelVictoria == null)
         {
-            panelVictoria.SetActive(true);
-
-            if (ScoreManager.instance != null)
-            {
-                int donas    = ScoreManager.instance.donasRecogidas;
-                int pasteles = ScoreManager.instance.pastelRecogidos;
-                int puntos   = ScoreManager.instance.score;
-
-                if (txtDonas != null)         txtDonas.text         = donas    + "/30";
-                if (txtPasteles != null)      txtPasteles.text      = pasteles + "/30";
-                if (txtPuntuacionFinal != null) txtPuntuacionFinal.text = puntos + "/900";
-            }
+            Debug.LogError("panelVictoria es NULL!");
+            return;
         }
+
+        panelVictoria.SetActive(true);
+
+        if (ScoreManager.instance == null)
+        {
+            Debug.LogError("ScoreManager es NULL en ShowVictoria!");
+            return;
+        }
+
+        int donas    = ScoreManager.instance.donasRecogidas;
+        int pasteles = ScoreManager.instance.pastelRecogidos;
+        int puntos   = ScoreManager.instance.score;
+
+        Debug.Log("Victoria! donas=" + donas + " pasteles=" + pasteles + " puntos=" + puntos);
+
+        if (txtDonas != null)
+            txtDonas.text = donas + "/30";
+        else
+            Debug.LogError("txtDonas es NULL!");
+
+        if (txtPasteles != null)
+            txtPasteles.text = pasteles + "/30";
+        else
+            Debug.LogError("txtPasteles es NULL!");
+
+        if (txtPuntuacionFinal != null)
+            txtPuntuacionFinal.text = puntos + "/900";
+        else
+            Debug.LogError("txtPuntuacionFinal es NULL!");
     }
 
     public void Reiniciar() => SceneManager.LoadScene(SceneManager.GetActiveScene().name);

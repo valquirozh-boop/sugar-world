@@ -23,6 +23,7 @@ public class ScoreManager : MonoBehaviour
     {
         donasRecogidas++;
         score += 10;
+        Debug.Log("Dona recogida. Total donas: " + donasRecogidas + " Score: " + score);
         ActualizarUI();
     }
 
@@ -30,13 +31,18 @@ public class ScoreManager : MonoBehaviour
     {
         pastelRecogidos++;
         score += 20;
+        Debug.Log("Pastel recogido. Total pasteles: " + pastelRecogidos + " Score: " + score);
         ActualizarUI();
     }
 
     void ActualizarUI()
     {
-        if (UIManager.instance != null)
-            UIManager.instance.ActualizarHUD(donasRecogidas, pastelRecogidos, score);
+        if (UIManager.instance == null)
+        {
+            Debug.LogError("UIManager.instance es NULL!");
+            return;
+        }
+        UIManager.instance.ActualizarHUD(donasRecogidas, pastelRecogidos, score);
     }
 
     public int GetScore() => score;

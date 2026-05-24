@@ -2240,7 +2240,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &100000161
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3857,8 +3857,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 38
-  m_fontSizeBase: 38
+  m_fontSize: 37
+  m_fontSizeBase: 37
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7014,7 +7014,7 @@ GameObject:
   - component: {fileID: 676790124}
   - component: {fileID: 676790123}
   m_Layer: 5
-  m_Name: "ImagenPuntuaci\xF3nTotal"
+  m_Name: "Puntuaci\xF3nTotal"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7235,7 +7235,7 @@ GameObject:
   - component: {fileID: 772778299}
   - component: {fileID: 772778298}
   m_Layer: 5
-  m_Name: "Puntuaci\xF3nTotal "
+  m_Name: PuntuacionHUD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7257,7 +7257,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 65.1, y: -14.2}
+  m_AnchoredPosition: {x: 112.5, y: -8.3}
   m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &772778298
@@ -7280,7 +7280,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ' TOTAL: 0/900'
+  m_text: 0/900
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 22826a2a72239694f8a4402578e6f649, type: 2}
   m_sharedMaterial: {fileID: 2361175627253263539, guid: 22826a2a72239694f8a4402578e6f649, type: 2}
@@ -7307,8 +7307,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 29
-  m_fontSizeBase: 29
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -10725,8 +10725,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -815.01166, y: 374.8}
-  m_SizeDelta: {x: 280.384, y: 54.786}
+  m_AnchoredPosition: {x: -844.92957, y: 363.1}
+  m_SizeDelta: {x: 214.741, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1468681307
 MonoBehaviour:
@@ -12269,8 +12269,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 38
-  m_fontSizeBase: 38
+  m_fontSize: 37
+  m_fontSizeBase: 37
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
