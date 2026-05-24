@@ -1059,7 +1059,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 313, y: 122}
+  m_AnchoredPosition: {x: 326, y: 72}
   m_SizeDelta: {x: 450, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &497364983
@@ -1082,7 +1082,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\nMu\xE9vete por el mapa \ncon agilidad y salta para llegar m\xE1s lejos."
+  m_text: "MU\xC9VETE POR EL MAPA\nCON AGILIDAD Y SALTA\nPARA LLEGAR M\xC1S LEJOS."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6e770cba1da4da441bbf5df56ce44ae0, type: 2}
   m_sharedMaterial: {fileID: 2957786835876000869, guid: 6e770cba1da4da441bbf5df56ce44ae0, type: 2}
@@ -1115,7 +1115,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -2747,8 +2747,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -247, y: 95}
-  m_SizeDelta: {x: 550, y: 3}
+  m_AnchoredPosition: {x: -237, y: 78}
+  m_SizeDelta: {x: 580, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1350274609
 MonoBehaviour:
@@ -2770,10 +2770,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Recolecta todos los dulces del mapa mientras escapas del sol que te persigue
-    constantemente. \nComo eres un helado, debes ser r\xE1pido y \xE1gil para no
-    derretirte. Descifra el camino correcto y llega al congelador para recuperar
-    tu fr\xEDo y sobrevivir."
+  m_text: "RECOGE TODOS LOS DULCES PARA GANAR MUCHOS PUNTOS. CADA DONA VALE 10 PUNTOS
+    Y CADA PASTEL 20 PUNTOS. \xA1CUIDADO CON EL SOL! TE DERRITE SI TARDAS DEMASIADO.
+    PARA GANAR, LLEGA A LA NEVERA FR\xCDA ANTES DE DERRETIRTE."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6e770cba1da4da441bbf5df56ce44ae0, type: 2}
   m_sharedMaterial: {fileID: 2957786835876000869, guid: 6e770cba1da4da441bbf5df56ce44ae0, type: 2}
@@ -2806,7 +2805,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
