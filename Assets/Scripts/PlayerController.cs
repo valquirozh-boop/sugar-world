@@ -13,16 +13,23 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float groundCheckDistance = 0.12f;
     [SerializeField] private LayerMask groundLayer;
 
+    [Header("Float")]
+    [SerializeField] private float floatSmoothTime = 2.5f;
+    [SerializeField] private float floatMaxSpeed = 6f;
+
     private Rigidbody2D rb;
     private SpriteRenderer sr;
     private bool isGrounded;
+    private bool isFloating;
     private float moveInput;
     private bool facingRight = true;
     private bool isDefeated = false;
+    private Transform floatTarget;
+    private Vector2 floatVelocity;
 
     public bool IsGrounded => isGrounded;
     public bool IsMoving => Mathf.Abs(moveInput) > 0.01f;
-    public bool InAir => !isGrounded || rb.linearVelocity.y > 0.05f;
+    public bool InAir => isFloating || !isGrounded || rb.linearVelocity.y > 0.05f;
 
     private void Awake()
     {
@@ -37,7 +44,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (isDefeated) return;
+        if (isDefeated || isFloating) return;
         var kb = Keyboard.current;
         if (kb == null) return;
 
@@ -59,15 +66,37 @@ public class PlayerController : MonoBehaviour
     {
         if (isDefeated) return;
 
+        if (isFloating && floatTarget != null)
+        {
+            isGrounded = false;
+            var targetPos = (Vector2)floatTarget.position;
+            var newPos = Vector2.SmoothDamp(rb.position, targetPos, ref floatVelocity, floatSmoothTime, floatMaxSpeed);
+            rb.MovePosition(newPos);
+            return;
+        }
+
         isGrounded = groundCheck != null
             && Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, groundLayer);
 
         rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
     }
 
+    public void StartFloat(Transform target)
+    {
+        if (isDefeated || isFloating || target == null) return;
+        isFloating = true;
+        floatTarget = target;
+        moveInput = 0f;
+        floatVelocity = Vector2.zero;
+        rb.linearVelocity = Vector2.zero;
+        rb.gravityScale = 0f;
+        rb.bodyType = RigidbodyType2D.Kinematic;
+    }
+
     public void Defeat()
     {
         isDefeated = true;
+        isFloating = false;
         rb.linearVelocity = Vector2.zero;
         rb.bodyType = RigidbodyType2D.Kinematic;
         UIManager.instance?.ShowDerrota();
@@ -76,6 +105,7 @@ public class PlayerController : MonoBehaviour
     public void Win()
     {
         isDefeated = true;
+        isFloating = false;
         rb.linearVelocity = Vector2.zero;
         rb.bodyType = RigidbodyType2D.Kinematic;
         UIManager.instance?.ShowVictoria();
