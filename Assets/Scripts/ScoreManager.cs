@@ -1,12 +1,12 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
 
-    [SerializeField] private Text scoreText;
-    private int score;
+    public int donasRecogidas = 0;
+    public int pastelRecogidos = 0;
+    public int score = 0;
 
     private void Awake()
     {
@@ -14,11 +14,35 @@ public class ScoreManager : MonoBehaviour
         instance = this;
     }
 
-    public void AddPoints(int points)
+    void Start()
     {
-        score += points;
-        if (scoreText != null)
-            scoreText.text = "Puntos: " + score;
+        ActualizarUI();
+    }
+
+    public void RecogerDona()
+    {
+        donasRecogidas++;
+        score += 10;
+        Debug.Log("Dona recogida. Total donas: " + donasRecogidas + " Score: " + score);
+        ActualizarUI();
+    }
+
+    public void RecogerPastel()
+    {
+        pastelRecogidos++;
+        score += 20;
+        Debug.Log("Pastel recogido. Total pasteles: " + pastelRecogidos + " Score: " + score);
+        ActualizarUI();
+    }
+
+    void ActualizarUI()
+    {
+        if (UIManager.instance == null)
+        {
+            Debug.LogError("UIManager.instance es NULL!");
+            return;
+        }
+        UIManager.instance.ActualizarHUD(donasRecogidas, pastelRecogidos, score);
     }
 
     public int GetScore() => score;
