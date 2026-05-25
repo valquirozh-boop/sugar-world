@@ -9,19 +9,30 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpForce = 12f;
 
     [Header("Ground Check")]
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private float groundCheckDistance = 0.12f;
     [SerializeField] private LayerMask groundLayer;
 
     private Rigidbody2D rb;
-    private Animator anim;
+    private SpriteRenderer sr;
     private bool isGrounded;
     private float moveInput;
     private bool facingRight = true;
     private bool isDefeated = false;
 
+    public bool IsGrounded => isGrounded;
+    public bool IsMoving => Mathf.Abs(moveInput) > 0.01f;
+    public bool InAir => !isGrounded || rb.linearVelocity.y > 0.05f;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+        sr = GetComponent<SpriteRenderer>();
+        GetComponent<CircleCollider2D>().sharedMaterial = new PhysicsMaterial2D { friction = 0f, bounciness = 0f };
+        if (groundCheck == null)
+            groundCheck = transform.Find("GroundCheck");
+        if (groundLayer.value == 0)
+            groundLayer = LayerMask.GetMask("Default", "Ground");
     }
 
     private void Update()
@@ -42,12 +53,15 @@ public class PlayerController : MonoBehaviour
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
 
         HandleFlip();
-        UpdateAnimations();
     }
 
     private void FixedUpdate()
     {
         if (isDefeated) return;
+
+        isGrounded = groundCheck != null
+            && Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, groundLayer);
+
         rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
     }
 
@@ -69,30 +83,15 @@ public class PlayerController : MonoBehaviour
 
     private void HandleFlip()
     {
-        if (moveInput > 0 && !facingRight) Flip();
-        else if (moveInput < 0 && facingRight) Flip();
+        if (moveInput > 0 && !facingRight)
+        {
+            facingRight = true;
+            sr.flipX = false;
+        }
+        else if (moveInput < 0 && facingRight)
+        {
+            facingRight = false;
+            sr.flipX = true;
+        }
     }
-
-    private void Flip()
-    {
-        facingRight = !facingRight;
-        Vector3 s = transform.localScale;
-        s.x *= -1;
-        transform.localScale = s;
-    }
-
-    private void UpdateAnimations()
-    {
-        if (anim == null) return;
-        anim.SetFloat("Speed", Mathf.Abs(moveInput));
-        anim.SetBool("IsGrounded", isGrounded);
-    }
-
-    private void OnCollisionStay2D(Collision2D col)
-    {
-        foreach (var contact in col.contacts)
-            if (contact.normal.y > 0.5f) { isGrounded = true; return; }
-    }
-
-    private void OnCollisionExit2D(Collision2D col) => isGrounded = false;
 }

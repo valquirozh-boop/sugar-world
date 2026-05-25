@@ -1,25 +1,16 @@
 fileFormatVersion: 2
-guid: fe7999fd71cca934da5e3916d3e7933e
+guid: d3997449e80aa9f81a0b83e940ac4fb2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6595957487634701022
-    second: sprites player_0
+      213: -5644148110103644201
+    second: jump _0
   - first:
-      213: -2228712722901127708
-    second: sprites player_1
+      213: 3663671405345606746
+    second: jump _1
   - first:
-      213: -155306294014643248
-    second: sprites player_2
-  - first:
-      213: -2282517413494190316
-    second: sprites player_3
-  - first:
-      213: 2571542175713222145
-    second: sprites player_4
-  - first:
-      213: 1574596308370486663
-    second: sprites player_5
+      213: 5738535703558788836
+    second: jump _2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -52,7 +43,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -66,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 222
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -90,7 +81,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -115,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sprites player_0
+      name: jump _0
       rect:
         serializedVersion: 2
-        x: 27
-        y: 113
-        width: 99
-        height: 120
+        x: 79
+        y: 162
+        width: 208
+        height: 230
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,20 +121,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: eda5b0c536c898b50800000000000000
-      internalID: 6595957487634701022
+      spriteID: 7d77495a235fba1b0800000000000000
+      internalID: -5644148110103644201
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprites player_1
+      name: jump _1
       rect:
         serializedVersion: 2
-        x: 148
-        y: 113
-        width: 97
-        height: 109
+        x: 375
+        y: 218
+        width: 214
+        height: 254
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4eda51536950211e0800000000000000
-      internalID: -2228712722901127708
+      spriteID: a5c81617bb9f7d230800000000000000
+      internalID: 3663671405345606746
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprites player_2
+      name: jump _2
       rect:
         serializedVersion: 2
-        x: 266
-        y: 115
-        width: 99
-        height: 118
+        x: 679
+        y: 282
+        width: 222
+        height: 266
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,74 +165,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0d3ffd99fbd38ddf0800000000000000
-      internalID: -155306294014643248
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sprites player_3
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 115
-        width: 97
-        height: 115
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 41f0907718ed250e0800000000000000
-      internalID: -2282517413494190316
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sprites player_4
-      rect:
-        serializedVersion: 2
-        x: 503
-        y: 114
-        width: 102
-        height: 116
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 10e5254fbf3ffa320800000000000000
-      internalID: 2571542175713222145
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sprites player_5
-      rect:
-        serializedVersion: 2
-        x: 627
-        y: 113
-        width: 97
-        height: 120
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7857019fff61ad510800000000000000
-      internalID: 1574596308370486663
+      spriteID: 4e6948d71df53af40800000000000000
+      internalID: 5738535703558788836
       vertices: []
       indices: 
       edges: []
@@ -260,12 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      sprites player_0: 6595957487634701022
-      sprites player_1: -2228712722901127708
-      sprites player_2: -155306294014643248
-      sprites player_3: -2282517413494190316
-      sprites player_4: 2571542175713222145
-      sprites player_5: 1574596308370486663
+      jump _0: -5644148110103644201
+      jump _1: 3663671405345606746
+      jump _2: 5738535703558788836
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
