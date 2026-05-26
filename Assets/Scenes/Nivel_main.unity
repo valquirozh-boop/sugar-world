@@ -430,6 +430,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 100000008}
+        m_TargetAssemblyTypeName: SonidoBoton, Assembly-CSharp
+        m_MethodName: ReproducirSonido
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &53283395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1315,6 +1327,7 @@ GameObject:
   - component: {fileID: 100000006}
   - component: {fileID: 100000005}
   - component: {fileID: 100000007}
+  - component: {fileID: 100000008}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1556,6 +1569,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &100000008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 258123de7cfeea345887a0034d284731, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SonidoBoton
+  clipBoton: {fileID: 8300000, guid: 5d958d556228db64cb8aa1a36687a0e0, type: 3}
 --- !u!1 &100000010
 GameObject:
   m_ObjectHideFlags: 0
@@ -4200,6 +4226,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 100000008}
+        m_TargetAssemblyTypeName: SonidoBoton, Assembly-CSharp
+        m_MethodName: ReproducirSonido
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &148413096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4324,6 +4362,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1579530535}
         m_TargetAssemblyTypeName: MenuPausa, Assembly-CSharp
         m_MethodName: Continuar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 100000008}
+        m_TargetAssemblyTypeName: SonidoBoton, Assembly-CSharp
+        m_MethodName: ReproducirSonido
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5844,7 +5894,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &239668745
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11188,6 +11238,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 100000008}
+        m_TargetAssemblyTypeName: SonidoBoton, Assembly-CSharp
+        m_MethodName: ReproducirSonido
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &657035749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13120,6 +13182,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1579530534}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: IrAlMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 100000008}
+        m_TargetAssemblyTypeName: SonidoBoton, Assembly-CSharp
+        m_MethodName: ReproducirSonido
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15876,6 +15950,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 100000008}
+        m_TargetAssemblyTypeName: SonidoBoton, Assembly-CSharp
+        m_MethodName: ReproducirSonido
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -20741,6 +20827,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 100000008}
+        m_TargetAssemblyTypeName: SonidoBoton, Assembly-CSharp
+        m_MethodName: ReproducirSonido
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1347315673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20939,7 +21037,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1353885065
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23958,6 +24056,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 732005994708609261, guid: 971647f5fbebe10d8b54bf20fe9e1c70, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 732005994708609261, guid: 971647f5fbebe10d8b54bf20fe9e1c70, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ReproducirSonido
+      objectReference: {fileID: 0}
+    - target: {fileID: 732005994708609261, guid: 971647f5fbebe10d8b54bf20fe9e1c70, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SonidoBoton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 732005994708609261, guid: 971647f5fbebe10d8b54bf20fe9e1c70, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1698966441287514687, guid: 971647f5fbebe10d8b54bf20fe9e1c70, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 896.18
@@ -23976,7 +24090,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2111328539019652545, guid: 971647f5fbebe10d8b54bf20fe9e1c70, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2111328539019652545, guid: 971647f5fbebe10d8b54bf20fe9e1c70, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -23987,8 +24101,16 @@ PrefabInstance:
       value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 2111328539019652545, guid: 971647f5fbebe10d8b54bf20fe9e1c70, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ReproducirSonido
+      objectReference: {fileID: 0}
+    - target: {fileID: 2111328539019652545, guid: 971647f5fbebe10d8b54bf20fe9e1c70, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2111328539019652545, guid: 971647f5fbebe10d8b54bf20fe9e1c70, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SonidoBoton, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2111328539019652545, guid: 971647f5fbebe10d8b54bf20fe9e1c70, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
@@ -23996,6 +24118,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2111328539019652545, guid: 971647f5fbebe10d8b54bf20fe9e1c70, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2111328539019652545, guid: 971647f5fbebe10d8b54bf20fe9e1c70, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2810170371663903274, guid: 971647f5fbebe10d8b54bf20fe9e1c70, type: 3}
@@ -24016,15 +24142,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2839846916764785326, guid: 971647f5fbebe10d8b54bf20fe9e1c70, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2914853398292214953, guid: 971647f5fbebe10d8b54bf20fe9e1c70, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -41
       objectReference: {fileID: 0}
+    - target: {fileID: 3386327636195738283, guid: 971647f5fbebe10d8b54bf20fe9e1c70, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3386327636195738283, guid: 971647f5fbebe10d8b54bf20fe9e1c70, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ReproducirSonido
+      objectReference: {fileID: 0}
+    - target: {fileID: 3386327636195738283, guid: 971647f5fbebe10d8b54bf20fe9e1c70, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SonidoBoton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3386327636195738283, guid: 971647f5fbebe10d8b54bf20fe9e1c70, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3826549257824407267, guid: 971647f5fbebe10d8b54bf20fe9e1c70, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3826549257824407267, guid: 971647f5fbebe10d8b54bf20fe9e1c70, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ReproducirSonido
+      objectReference: {fileID: 0}
+    - target: {fileID: 3826549257824407267, guid: 971647f5fbebe10d8b54bf20fe9e1c70, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SonidoBoton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3826549257824407267, guid: 971647f5fbebe10d8b54bf20fe9e1c70, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994659341415734248, guid: 971647f5fbebe10d8b54bf20fe9e1c70, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994659341415734248, guid: 971647f5fbebe10d8b54bf20fe9e1c70, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ReproducirSonido
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994659341415734248, guid: 971647f5fbebe10d8b54bf20fe9e1c70, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SonidoBoton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994659341415734248, guid: 971647f5fbebe10d8b54bf20fe9e1c70, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4107133336099627965, guid: 971647f5fbebe10d8b54bf20fe9e1c70, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4140619222109976037, guid: 971647f5fbebe10d8b54bf20fe9e1c70, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -24045,6 +24219,22 @@ PrefabInstance:
     - target: {fileID: 4625889502128977965, guid: 971647f5fbebe10d8b54bf20fe9e1c70, type: 3}
       propertyPath: m_fontSizeBase
       value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 4671332072855349467, guid: 971647f5fbebe10d8b54bf20fe9e1c70, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4671332072855349467, guid: 971647f5fbebe10d8b54bf20fe9e1c70, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ReproducirSonido
+      objectReference: {fileID: 0}
+    - target: {fileID: 4671332072855349467, guid: 971647f5fbebe10d8b54bf20fe9e1c70, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SonidoBoton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4671332072855349467, guid: 971647f5fbebe10d8b54bf20fe9e1c70, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4860122176376770766, guid: 971647f5fbebe10d8b54bf20fe9e1c70, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -24137,6 +24327,22 @@ PrefabInstance:
     - target: {fileID: 8772970322061544831, guid: 971647f5fbebe10d8b54bf20fe9e1c70, type: 3}
       propertyPath: m_Colors.m_PressedColor.r
       value: 0.4862745
+      objectReference: {fileID: 0}
+    - target: {fileID: 9185771760754581759, guid: 971647f5fbebe10d8b54bf20fe9e1c70, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9185771760754581759, guid: 971647f5fbebe10d8b54bf20fe9e1c70, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ReproducirSonido
+      objectReference: {fileID: 0}
+    - target: {fileID: 9185771760754581759, guid: 971647f5fbebe10d8b54bf20fe9e1c70, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SonidoBoton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9185771760754581759, guid: 971647f5fbebe10d8b54bf20fe9e1c70, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
