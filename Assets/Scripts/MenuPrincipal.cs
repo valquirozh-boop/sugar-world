@@ -35,6 +35,12 @@ public class MenuPrincipal : MonoBehaviour
 
     public void BotonSalir()
     {
+        Debug.Log("El jugador ha salido del juego");
+
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
         Application.Quit();
+#endif
     }
 }
