@@ -25,7 +25,7 @@ public class MenuPrincipal : MonoBehaviour
     public void BotonJugar()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Nivel1");
+        SceneManager.LoadScene("Nivel_main");
     }
 
     public void AbrirCreditos() { panelCreditos.SetActive(true); }
