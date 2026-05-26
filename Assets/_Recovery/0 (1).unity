@@ -1793,8 +1793,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 13, y: 146}
-  m_SizeDelta: {x: 1100, y: 50}
+  m_AnchoredPosition: {x: 1, y: 130}
+  m_SizeDelta: {x: 1000, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &748274382
 MonoBehaviour:
@@ -1818,10 +1818,10 @@ MonoBehaviour:
       m_Calls: []
   m_text: "DESARROLLO Y PROGRAMACI\xD3N:  Sara Lizeth Nu\xF1es Echeverri, Valentina
     Herrera Quiroz\nARTE Y DISE\xD1O: Arte original creado por el equipo, Elementos
-    gr\xE1ficos generados con asistencia de Inteligencia Artificial \r\nASSETS UTILIZADOS:
-    M\xFAsica y Sonidos: [Nombre del autor o sitio, ej: Itch.io / Kenney.nl], Fuentes:
-    CutePixel, Retro Arcade Terror, Super Bubble. Sitio: DaFont\nHERRAMIENTAS: Unity,
-    Visual Studio, GitHub\nAGRADECIMIENTOS\nGracias por jugar nuestro videojuego.\n\xA9
+    gr\xE1ficos generados con asistencia de Inteligencia Artificial (IA)\r\nASSETS
+    UTILIZADOS: M\xFAsica y Sonidos: [Nombre del autor o sitio, ej: Itch.io / Kenney.nl],
+    Fuentes: CutePixel, Retro Arcade Terror, Super Bubble. Sitio: DaFont\nHERRAMIENTAS:
+    Unity, Visual Studio, GitHub\nAGRADECIMIENTOS\nGracias por jugar nuestro videojuego.\n\xA9
     2026\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6e770cba1da4da441bbf5df56ce44ae0, type: 2}
@@ -1849,14 +1849,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 39
-  m_fontSizeBase: 39
+  m_fontSize: 34
+  m_fontSizeBase: 34
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -3933,7 +3933,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1682178553
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3953,8 +3953,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 28.77, y: -50}
-  m_SizeDelta: {x: 1423.335, y: 700}
+  m_AnchoredPosition: {x: 41.895, y: -50}
+  m_SizeDelta: {x: 1289.453, y: 700}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1682178554
 MonoBehaviour:
