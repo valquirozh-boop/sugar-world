@@ -1844,8 +1844,10 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 0
-  floatSmoothTime: 2.5
-  floatMaxSpeed: 6
+  floatDuration: 0.75
+  floatArcHeight: 5
+  jumpClip: {fileID: 8300000, guid: c31eb354d3d5e3be88dacc0413b46675, type: 3}
+  jumpVolume: 0.7
 --- !u!114 &100000027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1876,6 +1878,7 @@ MonoBehaviour:
   - {fileID: -5644148110103644201, guid: d3997449e80aa9f81a0b83e940ac4fb2, type: 3}
   - {fileID: 3663671405345606746, guid: d3997449e80aa9f81a0b83e940ac4fb2, type: 3}
   - {fileID: 5738535703558788836, guid: d3997449e80aa9f81a0b83e940ac4fb2, type: 3}
+  floatSprite: {fileID: 5983273480264594098, guid: 4ddedd36ccf83e4f2b2640f59d0f0c14, type: 3}
   frameRate: 12
 --- !u!1 &100000030
 GameObject:

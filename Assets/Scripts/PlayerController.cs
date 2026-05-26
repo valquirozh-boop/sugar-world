@@ -14,21 +14,28 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
 
     [Header("Float")]
-    [SerializeField] private float floatSmoothTime = 2.5f;
-    [SerializeField] private float floatMaxSpeed = 6f;
+    [SerializeField] private float floatDuration = 0.75f;
+    [SerializeField] private float floatArcHeight = 5f;
+
+    [Header("Audio")]
+    [SerializeField] private AudioClip jumpClip;
+    [SerializeField] [Range(0f, 1f)] private float jumpVolume = 0.7f;
 
     private Rigidbody2D rb;
     private SpriteRenderer sr;
+    private AudioSource audioSource;
     private bool isGrounded;
     private bool isFloating;
     private float moveInput;
     private bool facingRight = true;
     private bool isDefeated = false;
     private Transform floatTarget;
-    private Vector2 floatVelocity;
+    private Vector2 floatStartPos;
+    private float floatElapsed;
 
     public bool IsGrounded => isGrounded;
     public bool IsMoving => Mathf.Abs(moveInput) > 0.01f;
+    public bool IsFloating => isFloating;
     public bool InAir => isFloating || !isGrounded || rb.linearVelocity.y > 0.05f;
 
     private void Awake()
@@ -40,6 +47,12 @@ public class PlayerController : MonoBehaviour
             groundCheck = transform.Find("GroundCheck");
         if (groundLayer.value == 0)
             groundLayer = LayerMask.GetMask("Default", "Ground");
+
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+            audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.playOnAwake = false;
+        audioSource.spatialBlend = 0f;
     }
 
     private void Update()
@@ -57,7 +70,10 @@ public class PlayerController : MonoBehaviour
                         || kb.upArrowKey.wasPressedThisFrame;
 
         if (jumpPressed && isGrounded)
+        {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            PlayJumpSound();
+        }
 
         HandleFlip();
     }
@@ -69,9 +85,15 @@ public class PlayerController : MonoBehaviour
         if (isFloating && floatTarget != null)
         {
             isGrounded = false;
-            var targetPos = (Vector2)floatTarget.position;
-            var newPos = Vector2.SmoothDamp(rb.position, targetPos, ref floatVelocity, floatSmoothTime, floatMaxSpeed);
-            rb.MovePosition(newPos);
+            floatElapsed += Time.fixedDeltaTime;
+            float t = Mathf.Clamp01(floatElapsed / floatDuration);
+            t = t * t * (3f - 2f * t);
+
+            Vector2 end = floatTarget.position;
+            Vector2 control = (floatStartPos + end) * 0.5f + Vector2.up * floatArcHeight;
+            Vector2 a = Vector2.Lerp(floatStartPos, control, t);
+            Vector2 b = Vector2.Lerp(control, end, t);
+            rb.MovePosition(Vector2.Lerp(a, b, t));
             return;
         }
 
@@ -87,10 +109,12 @@ public class PlayerController : MonoBehaviour
         isFloating = true;
         floatTarget = target;
         moveInput = 0f;
-        floatVelocity = Vector2.zero;
+        floatStartPos = rb.position;
+        floatElapsed = 0f;
         rb.linearVelocity = Vector2.zero;
         rb.gravityScale = 0f;
         rb.bodyType = RigidbodyType2D.Kinematic;
+        PlayJumpSound();
     }
 
     public void Defeat()
@@ -109,6 +133,12 @@ public class PlayerController : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
         rb.bodyType = RigidbodyType2D.Kinematic;
         UIManager.instance?.ShowVictoria();
+    }
+
+    private void PlayJumpSound()
+    {
+        if (jumpClip != null && audioSource != null)
+            audioSource.PlayOneShot(jumpClip, jumpVolume);
     }
 
     private void HandleFlip()
