@@ -16,16 +16,16 @@ public class MenuPrincipal : MonoBehaviour
         if (panelInstrucciones != null) panelInstrucciones.SetActive(false);
     }
 
-    public void AbrirInstrucciones()
+    public void BotonJugar()
     {
         if (contenedorMenu != null) contenedorMenu.SetActive(false);
         if (panelInstrucciones != null) panelInstrucciones.SetActive(true);
     }
 
-    public void BotonJugar()
+    public void AbrirInstrucciones()
     {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("Nivel_main");
+        if (contenedorMenu != null) contenedorMenu.SetActive(false);
+        if (panelInstrucciones != null) panelInstrucciones.SetActive(true);
     }
 
     public void AbrirCreditos() { panelCreditos.SetActive(true); }

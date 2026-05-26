@@ -1,2 +1,13 @@
 fileFormatVersion: 2
 guid: 52774bb035819d9499f71eb5209edb2d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - helado1: {fileID: 4462667958294709507, guid: e90e13ee8047414499a1a2db440a0365, type: 3}
+  - helado2: {fileID: 4089429850733493049, guid: d2d81b323a42cde43a05508be3f4cc5d, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
