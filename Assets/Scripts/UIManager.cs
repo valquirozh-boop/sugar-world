@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 
+[DefaultExecutionOrder(-100)]
 public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
@@ -10,14 +11,14 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject panelVictoria;
 
     [Header("Textos Panel Victoria")]
-    public TextMeshProUGUI txtDonas;
-    public TextMeshProUGUI txtPasteles;
-    public TextMeshProUGUI txtPuntuacionFinal;
+    [SerializeField] private TextMeshProUGUI txtDonas;
+    [SerializeField] private TextMeshProUGUI txtPasteles;
+    [SerializeField] private TextMeshProUGUI txtPuntuacionFinal;
 
     [Header("Textos HUD en vivo")]
-    public TextMeshProUGUI txtDonasHUD;
-    public TextMeshProUGUI txtPastelHUD;
-    public TextMeshProUGUI txtTotalHUD;
+    [SerializeField] private TextMeshProUGUI txtDonasHUD;
+    [SerializeField] private TextMeshProUGUI txtPastelHUD;
+    [SerializeField] private TextMeshProUGUI txtTotalHUD;
 
     private void Awake()
     {
@@ -28,7 +29,6 @@ public class UIManager : MonoBehaviour
         }
 
         instance = this;
-        ResolverReferencias();
     }
 
     private void Start()
@@ -37,56 +37,10 @@ public class UIManager : MonoBehaviour
         if (panelVictoria != null) panelVictoria.SetActive(false);
     }
 
-    private void ResolverReferencias()
+    private void OnDestroy()
     {
-        if (panelDerrota == null)
-            panelDerrota = BuscarEnEscena("PanelDerrota");
-        if (panelVictoria == null)
-            panelVictoria = BuscarEnEscena("PanelVictoria");
-
-        if (txtDonasHUD == null)
-            txtDonasHUD = BuscarTMP("ScoreTextDona");
-        if (txtPastelHUD == null)
-            txtPastelHUD = BuscarTMP("ScoreTextPastel");
-        if (txtTotalHUD == null)
-            txtTotalHUD = BuscarTMP("PuntuacionHUD");
-
-        if (txtDonas == null)
-            txtDonas = BuscarTMPEnHijos(panelVictoria, "TxtDonas");
-        if (txtPasteles == null)
-            txtPasteles = BuscarTMPEnHijos(panelVictoria, "TxtPasteles");
-        if (txtPuntuacionFinal == null)
-            txtPuntuacionFinal = BuscarTMPEnHijos(panelVictoria, "PuntuaciónTotal");
-    }
-
-    static GameObject BuscarEnEscena(string nombre)
-    {
-        foreach (var root in SceneManager.GetActiveScene().GetRootGameObjects())
-        {
-            foreach (var t in root.GetComponentsInChildren<Transform>(true))
-            {
-                if (t.name == nombre)
-                    return t.gameObject;
-            }
-        }
-        return null;
-    }
-
-    static TextMeshProUGUI BuscarTMP(string nombre)
-    {
-        var go = BuscarEnEscena(nombre);
-        return go != null ? go.GetComponent<TextMeshProUGUI>() : null;
-    }
-
-    static TextMeshProUGUI BuscarTMPEnHijos(GameObject padre, string nombre)
-    {
-        if (padre == null) return null;
-        foreach (var t in padre.GetComponentsInChildren<Transform>(true))
-        {
-            if (t.name == nombre)
-                return t.GetComponent<TextMeshProUGUI>();
-        }
-        return null;
+        if (instance == this)
+            instance = null;
     }
 
     public void ActualizarHUD(int donas, int pasteles, int total)
@@ -98,7 +52,6 @@ public class UIManager : MonoBehaviour
 
     public void ShowDerrota()
     {
-        ResolverReferencias();
         Time.timeScale = 0f;
         if (panelVictoria != null) panelVictoria.SetActive(false);
         if (panelDerrota != null) panelDerrota.SetActive(true);
@@ -106,7 +59,6 @@ public class UIManager : MonoBehaviour
 
     public void ShowVictoria()
     {
-        ResolverReferencias();
         Time.timeScale = 0f;
         if (panelDerrota != null) panelDerrota.SetActive(false);
         if (panelVictoria == null) return;
@@ -115,22 +67,18 @@ public class UIManager : MonoBehaviour
 
         if (ScoreManager.instance == null) return;
 
-        int donas    = ScoreManager.instance.donasRecogidas;
-        int pasteles = ScoreManager.instance.pastelRecogidos;
-        int puntos   = ScoreManager.instance.score;
-
         if (txtDonas != null)
-            txtDonas.text = donas + "/30";
+            txtDonas.text = ScoreManager.instance.donasRecogidas + "/30";
         if (txtPasteles != null)
-            txtPasteles.text = pasteles + "/30";
+            txtPasteles.text = ScoreManager.instance.pastelRecogidos + "/30";
         if (txtPuntuacionFinal != null)
-            txtPuntuacionFinal.text = puntos + "/900";
+            txtPuntuacionFinal.text = ScoreManager.instance.score + "/900";
     }
 
     public void Reiniciar()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void IrAlMenu()

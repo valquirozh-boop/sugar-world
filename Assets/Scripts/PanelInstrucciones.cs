@@ -7,8 +7,8 @@ public class PanelInstrucciones : MonoBehaviour
 
     void Awake()
     {
-        if (panelInstrucciones != null)
-            panelInstrucciones.SetActive(true);
+        if (panelInstrucciones == null) return;
+        panelInstrucciones.SetActive(true);
         Time.timeScale = 0f;
     }
 
