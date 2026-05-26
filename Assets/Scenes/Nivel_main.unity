@@ -2467,7 +2467,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &100000121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8861,7 +8861,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tipo: 0
+  tipo: 1
 --- !u!58 &475875912
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -10487,7 +10487,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tipo: 0
+  tipo: 1
 --- !u!58 &617449205
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -12825,7 +12825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tipo: 0
+  tipo: 1
 --- !u!58 &795246299
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -13424,7 +13424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tipo: 0
+  tipo: 1
 --- !u!58 &860811605
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -15424,7 +15424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tipo: 0
+  tipo: 1
 --- !u!58 &1029357757
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -15566,7 +15566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tipo: 0
+  tipo: 1
 --- !u!58 &1052945751
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -21600,7 +21600,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tipo: 0
+  tipo: 1
 --- !u!58 &1366041210
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -24309,12 +24309,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UIManager
   panelDerrota: {fileID: 239668744}
   panelVictoria: {fileID: 2066157189}
-  txtDonas: {fileID: 0}
-  txtPasteles: {fileID: 0}
-  txtPuntuacionFinal: {fileID: 0}
-  txtDonasHUD: {fileID: 0}
-  txtPastelHUD: {fileID: 0}
-  txtTotalHUD: {fileID: 0}
+  txtDonas: {fileID: 235379583}
+  txtPasteles: {fileID: 211080997}
+  txtPuntuacionFinal: {fileID: 1229956457}
+  txtDonasHUD: {fileID: 1881757612}
+  txtPastelHUD: {fileID: 911619624}
+  txtTotalHUD: {fileID: 1356848296}
 --- !u!114 &1579530535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24928,7 +24928,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tipo: 0
+  tipo: 1
 --- !u!58 &1639152235
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -26821,7 +26821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tipo: 0
+  tipo: 1
 --- !u!58 &1724324760
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -31424,7 +31424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tipo: 0
+  tipo: 1
 --- !u!58 &2069955097
 CircleCollider2D:
   m_ObjectHideFlags: 0
