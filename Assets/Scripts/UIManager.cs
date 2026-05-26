@@ -21,33 +21,70 @@ public class UIManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance != null) { Destroy(gameObject); return; }
+        if (instance != null && instance != this)
+        {
+            Destroy(this);
+            return;
+        }
+
         instance = this;
-
-        // HUD en vivo
-        if (txtDonasHUD == null)
-            txtDonasHUD = GameObject.Find("ScoreTextDona")?.GetComponent<TextMeshProUGUI>();
-        if (txtPastelHUD == null)
-            txtPastelHUD = GameObject.Find("ScoreTextPastel")?.GetComponent<TextMeshProUGUI>();
-        if (txtTotalHUD == null)
-            txtTotalHUD = GameObject.Find("PuntuacionHUD")?.GetComponent<TextMeshProUGUI>();
-
-        // Panel Victoria — busca dentro del panel aunque esté inactivo
-        if (txtDonas == null)
-            txtDonas = BuscarEnHijos(panelVictoria, "TxtDonas");
-        if (txtPasteles == null)
-            txtPasteles = BuscarEnHijos(panelVictoria, "TxtPasteles");
-        if (txtPuntuacionFinal == null)
-            txtPuntuacionFinal = BuscarEnHijos(panelVictoria, "PuntuaciónTotal");
+        ResolverReferencias();
     }
 
-    TextMeshProUGUI BuscarEnHijos(GameObject padre, string nombre)
+    private void Start()
+    {
+        if (panelDerrota != null) panelDerrota.SetActive(false);
+        if (panelVictoria != null) panelVictoria.SetActive(false);
+    }
+
+    private void ResolverReferencias()
+    {
+        if (panelDerrota == null)
+            panelDerrota = BuscarEnEscena("PanelDerrota");
+        if (panelVictoria == null)
+            panelVictoria = BuscarEnEscena("PanelVictoria");
+
+        if (txtDonasHUD == null)
+            txtDonasHUD = BuscarTMP("ScoreTextDona");
+        if (txtPastelHUD == null)
+            txtPastelHUD = BuscarTMP("ScoreTextPastel");
+        if (txtTotalHUD == null)
+            txtTotalHUD = BuscarTMP("PuntuacionHUD");
+
+        if (txtDonas == null)
+            txtDonas = BuscarTMPEnHijos(panelVictoria, "TxtDonas");
+        if (txtPasteles == null)
+            txtPasteles = BuscarTMPEnHijos(panelVictoria, "TxtPasteles");
+        if (txtPuntuacionFinal == null)
+            txtPuntuacionFinal = BuscarTMPEnHijos(panelVictoria, "PuntuaciónTotal");
+    }
+
+    static GameObject BuscarEnEscena(string nombre)
+    {
+        foreach (var root in SceneManager.GetActiveScene().GetRootGameObjects())
+        {
+            foreach (var t in root.GetComponentsInChildren<Transform>(true))
+            {
+                if (t.name == nombre)
+                    return t.gameObject;
+            }
+        }
+        return null;
+    }
+
+    static TextMeshProUGUI BuscarTMP(string nombre)
+    {
+        var go = BuscarEnEscena(nombre);
+        return go != null ? go.GetComponent<TextMeshProUGUI>() : null;
+    }
+
+    static TextMeshProUGUI BuscarTMPEnHijos(GameObject padre, string nombre)
     {
         if (padre == null) return null;
-        foreach (Transform hijo in padre.GetComponentsInChildren<Transform>(true))
+        foreach (var t in padre.GetComponentsInChildren<Transform>(true))
         {
-            if (hijo.name == nombre)
-                return hijo.GetComponent<TextMeshProUGUI>();
+            if (t.name == nombre)
+                return t.GetComponent<TextMeshProUGUI>();
         }
         return null;
     }
@@ -61,47 +98,44 @@ public class UIManager : MonoBehaviour
 
     public void ShowDerrota()
     {
+        ResolverReferencias();
+        Time.timeScale = 0f;
+        if (panelVictoria != null) panelVictoria.SetActive(false);
         if (panelDerrota != null) panelDerrota.SetActive(true);
     }
 
     public void ShowVictoria()
     {
-        if (panelVictoria == null)
-        {
-            Debug.LogError("panelVictoria es NULL!");
-            return;
-        }
+        ResolverReferencias();
+        Time.timeScale = 0f;
+        if (panelDerrota != null) panelDerrota.SetActive(false);
+        if (panelVictoria == null) return;
 
         panelVictoria.SetActive(true);
 
-        if (ScoreManager.instance == null)
-        {
-            Debug.LogError("ScoreManager es NULL en ShowVictoria!");
-            return;
-        }
+        if (ScoreManager.instance == null) return;
 
         int donas    = ScoreManager.instance.donasRecogidas;
         int pasteles = ScoreManager.instance.pastelRecogidos;
         int puntos   = ScoreManager.instance.score;
 
-        Debug.Log("Victoria! donas=" + donas + " pasteles=" + pasteles + " puntos=" + puntos);
-
         if (txtDonas != null)
             txtDonas.text = donas + "/30";
-        else
-            Debug.LogError("txtDonas es NULL!");
-
         if (txtPasteles != null)
             txtPasteles.text = pasteles + "/30";
-        else
-            Debug.LogError("txtPasteles es NULL!");
-
         if (txtPuntuacionFinal != null)
             txtPuntuacionFinal.text = puntos + "/900";
-        else
-            Debug.LogError("txtPuntuacionFinal es NULL!");
     }
 
-    public void Reiniciar() => SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    public void IrAlMenu()  => SceneManager.LoadScene(0);
+    public void Reiniciar()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void IrAlMenu()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(0);
+    }
 }

@@ -3,52 +3,62 @@ using UnityEngine.SceneManagement;
 
 public class MenuPausa : MonoBehaviour
 {
-    [Header("Configuración del Menú")]
-    public GameObject panelPausa;
+    [SerializeField] private GameObject panelPausa;
 
-    // Se ejecuta al pulsar el botón de PAUSA en el juego
-    public void AbrirPausa()
+    private void Awake()
     {
-        if (panelPausa != null)
-        {
-            panelPausa.SetActive(true);
-            Time.timeScale = 0f; // Pausa el tiempo del juego
-        }
-        else
-        {
-            Debug.LogError("Error: ¡No has asignado el Panel de Pausa en el Inspector!");
-        }
+        if (panelPausa == null)
+            panelPausa = BuscarEnEscena("PanelPausa");
     }
 
-    // Se ejecuta al pulsar el botón de CONTINUAR en el panel
-    public void Continuar()
+    private void Start()
     {
         if (panelPausa != null)
-        {
-            // 1. Apagar el panel
             panelPausa.SetActive(false);
+    }
 
-            // 2. Reanudar el tiempo
-            Time.timeScale = 1f; 
-
-            // 3. LA SOLUCIÓN: Buscar al jugador y reactivar su Rigidbody
-            // Esto asegura que las físicas vuelvan a calcularse inmediatamente
-            PlayerController player = FindFirstObjectByType<PlayerController>();
-            if (player != null)
+    private static GameObject BuscarEnEscena(string nombre)
+    {
+        foreach (var root in SceneManager.GetActiveScene().GetRootGameObjects())
+        {
+            foreach (var t in root.GetComponentsInChildren<Transform>(true))
             {
-                Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
-                if (rb != null)
-                {
-                    rb.WakeUp(); 
-                }
+                if (t.name == nombre)
+                    return t.gameObject;
             }
         }
+        return null;
     }
 
-    // Se ejecuta al pulsar el botón de VOLVER AL MENÚ
+    public void AbrirPausa()
+    {
+        if (panelPausa == null)
+            panelPausa = BuscarEnEscena("PanelPausa");
+        if (panelPausa == null) return;
+
+        panelPausa.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    public void Continuar()
+    {
+        if (panelPausa == null) return;
+
+        panelPausa.SetActive(false);
+        Time.timeScale = 1f;
+
+        var player = FindFirstObjectByType<PlayerController>();
+        if (player != null)
+        {
+            var rb = player.GetComponent<Rigidbody2D>();
+            if (rb != null)
+                rb.WakeUp();
+        }
+    }
+
     public void IrAlMenu()
     {
-        Time.timeScale = 1f; // Siempre reanudar el tiempo antes de cambiar de escena
-        SceneManager.LoadScene("menu");
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(0);
     }
 }
