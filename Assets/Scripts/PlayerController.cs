@@ -19,7 +19,9 @@ public class PlayerController : MonoBehaviour
 
     [Header("Audio")]
     [SerializeField] private AudioClip jumpClip;
+    [SerializeField] private AudioClip defeatClip;
     [SerializeField] [Range(0f, 1f)] private float jumpVolume = 0.7f;
+    [SerializeField] [Range(0f, 1f)] private float defeatVolume = 0.8f;
 
     private Rigidbody2D rb;
     private SpriteRenderer sr;
@@ -119,15 +121,20 @@ public class PlayerController : MonoBehaviour
 
     public void Defeat()
     {
+        if (isDefeated) return;
+
         isDefeated = true;
         isFloating = false;
         rb.linearVelocity = Vector2.zero;
         rb.bodyType = RigidbodyType2D.Kinematic;
+        PlaySound(defeatClip, defeatVolume);
         UIManager.instance?.ShowDerrota();
     }
 
     public void Win()
     {
+        if (isDefeated) return;
+
         isDefeated = true;
         isFloating = false;
         rb.linearVelocity = Vector2.zero;
@@ -137,8 +144,13 @@ public class PlayerController : MonoBehaviour
 
     private void PlayJumpSound()
     {
-        if (jumpClip != null && audioSource != null)
-            audioSource.PlayOneShot(jumpClip, jumpVolume);
+        PlaySound(jumpClip, jumpVolume);
+    }
+
+    private void PlaySound(AudioClip clip, float volume)
+    {
+        if (clip != null && audioSource != null)
+            audioSource.PlayOneShot(clip, volume);
     }
 
     private void HandleFlip()

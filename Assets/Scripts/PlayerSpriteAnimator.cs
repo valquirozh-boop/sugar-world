@@ -15,7 +15,6 @@ public class PlayerSpriteAnimator : MonoBehaviour
     private int frameIndex;
     private float frameTimer;
     private Vector3 baseScale;
-    private bool floatScaleActive;
 
     private void Awake()
     {
@@ -38,9 +37,6 @@ public class PlayerSpriteAnimator : MonoBehaviour
             }
             return;
         }
-
-        if (floatScaleActive)
-            ResetScale();
 
         Sprite[] next = controller.InAir ? jumpFrames
             : controller.IsMoving ? walkFrames
@@ -78,12 +74,5 @@ public class PlayerSpriteAnimator : MonoBehaviour
         if (floatSize <= 0f) return;
 
         transform.localScale = baseScale * (refSize / floatSize);
-        floatScaleActive = true;
-    }
-
-    private void ResetScale()
-    {
-        transform.localScale = baseScale;
-        floatScaleActive = false;
     }
 }

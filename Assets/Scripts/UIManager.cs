@@ -45,9 +45,21 @@ public class UIManager : MonoBehaviour
 
     public void ActualizarHUD(int donas, int pasteles, int total)
     {
-        if (txtDonasHUD != null)  txtDonasHUD.text  = donas + "/30";
-        if (txtPastelHUD != null) txtPastelHUD.text = pasteles + "/30";
-        if (txtTotalHUD != null)  txtTotalHUD.text  = total + "/900";
+        int maxDonas = ScoreManager.instance != null ? ScoreManager.instance.totalDonas : 0;
+        int maxPasteles = ScoreManager.instance != null ? ScoreManager.instance.totalPasteles : 0;
+        int maxPuntos = ScoreManager.instance != null ? ScoreManager.instance.puntuacionMaxima : 0;
+
+        string donasTexto = donas + "/" + maxDonas;
+        string pastelesTexto = pasteles + "/" + maxPasteles;
+        string puntosTexto = total + "/" + maxPuntos;
+
+        if (txtDonasHUD != null) txtDonasHUD.text = donasTexto;
+        if (txtPastelHUD != null) txtPastelHUD.text = pastelesTexto;
+        if (txtTotalHUD != null) txtTotalHUD.text = puntosTexto;
+
+        if (txtDonas != null) txtDonas.text = donasTexto;
+        if (txtPasteles != null) txtPasteles.text = pastelesTexto;
+        if (txtPuntuacionFinal != null) txtPuntuacionFinal.text = puntosTexto;
     }
 
     public void ShowDerrota()
@@ -65,14 +77,11 @@ public class UIManager : MonoBehaviour
 
         panelVictoria.SetActive(true);
 
-        if (ScoreManager.instance == null) return;
-
-        if (txtDonas != null)
-            txtDonas.text = ScoreManager.instance.donasRecogidas + "/30";
-        if (txtPasteles != null)
-            txtPasteles.text = ScoreManager.instance.pastelRecogidos + "/30";
-        if (txtPuntuacionFinal != null)
-            txtPuntuacionFinal.text = ScoreManager.instance.score + "/900";
+        if (ScoreManager.instance != null)
+            ActualizarHUD(
+                ScoreManager.instance.donasRecogidas,
+                ScoreManager.instance.pastelRecogidos,
+                ScoreManager.instance.score);
     }
 
     public void Reiniciar()
