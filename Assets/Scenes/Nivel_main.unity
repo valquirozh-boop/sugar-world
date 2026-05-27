@@ -1847,7 +1847,7 @@ MonoBehaviour:
   floatDuration: 0.75
   floatArcHeight: 5
   jumpClip: {fileID: 8300000, guid: c31eb354d3d5e3be88dacc0413b46675, type: 3}
-  defeatClip: {fileID: 0}
+  defeatClip: {fileID: 8300000, guid: 8aaea401c23580dffb7fd6bf695bb62b, type: 3}
   jumpVolume: 0.7
   defeatVolume: 0.8
 --- !u!114 &100000027
